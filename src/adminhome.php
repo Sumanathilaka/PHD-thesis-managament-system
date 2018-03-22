@@ -77,6 +77,7 @@ input[type=text], select, textarea{
 </form>
 <form action="searchStatus.php" method="POST">
 <label >Search by status</label>
+    <br>
 <select  id = 'status' name="status">
 <option value="">Select the option</option>    
 <option value="option1">option1</option>
