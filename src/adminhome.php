@@ -69,7 +69,7 @@ input[type=text], select, textarea{
 <br><br>
 
 <center><button onclick="window.location.href='add.php'">Add New Project</button>
-<center><button onclick="window.location.href='notify.php'" style="background-color: orange">Notifications</button></center>
+<button onclick="window.location.href='notify.php'" style="background-color: orange">Notifications</button></center>
 <br><br>
 
 <form action="search.php" method="POST">
