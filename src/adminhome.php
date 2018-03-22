@@ -68,7 +68,8 @@ input[type=text], select, textarea{
 <h2>phD Student Project Management System</h2></center>
 <br><br>
 
-<center><button onclick="window.location.href='add.php'">Add New Project</button></center>
+<center><button onclick="window.location.href='add.php'">Add New Project</button>
+<center><button onclick="window.location.href='notify.php'" style="background-color: orange">Notifications</button></center>
 <br><br>
 
 <form action="search.php" method="POST">
@@ -97,7 +98,7 @@ input[type=text], select, textarea{
 
 <?php
 $roll="";
-    
+
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -105,6 +106,7 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -113,11 +115,9 @@ FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno";
 $result= mysqli_query($conn, $sql);
 $availability=0;
-   
-    
-    
+$currenttime=date('Y-m-d');
 echo  "<table id = 'records'>"; 
-  echo "<tr>";
+echo "<tr>";
       echo  "<th>Name</th>";
       echo  "<th>Roll No</th>";
       echo  "<th>Project</th>";
@@ -126,35 +126,41 @@ echo  "<table id = 'records'>";
       echo  "<th>Last Modified Date</th>";
       echo  "<th>Edit</th>";
       echo  "<th>History</th>";
+      echo "<th>Notification</th>";
   echo "</tr>";    
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
               
              $availability=1;
               $roll=$row['rollno'];
-  ?>       
-            <?php
+
+$v=14;
+$current=$row['date'];
+$new = date('Y-m-d', strtotime("$current +  $v days")); 
         
-        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'History'></form>", "</td></tr>" ;?>
+        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'History'></form>","</td><td>";
+
+      if ($new <= $currenttime) {
+
+   echo "<form action='Notification.php' method='post' >
+  <input type='hidden' name='rollno' value= ",$roll ,"> 
+  <input type='submit' value='Notification' style='background-color: red'></form>"; 
+         }
+
+   echo "</td></tr>" ;
+
+ }}
 
 
-
-
-<?php
-}
-}
 if($availability==0)
 {
-  ?>
- <center>
-  <?php
-  echo "<br><br><br>";
-   echo "No projects are available";
+   echo "<br><br><br>";
+   echo "<center>"."No projects are available"."</center>";
 }
                   
 mysqli_close($conn);
 ?> 
-    </center>
+
     <footer style="position: fixed;
     left: 0;
     bottom: 0;
@@ -176,6 +182,3 @@ mysqli_close($conn);
 </html>
 
 
-
-</body>
-</html>
