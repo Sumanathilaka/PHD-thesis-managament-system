@@ -111,10 +111,10 @@
       $pass = $_POST['password'];
       if($username == 'admin' && $pass == 'admin') {
         $_SESSION['username'] = $username;
-//         header('Location:adminhome.php ');
+//         header('Location:notify.php ');
 	    ?>
 	      <script type="text/javascript">
-window.location.href = 'adminhome.php';
+window.location.href = 'notify.php';
           </script>
 		  <?php
       }
