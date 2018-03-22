@@ -9,11 +9,28 @@ session_start();
 <link rel="icon" href="nitc.png">
 
 <style>
-
+    #records {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#records td, #records th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#records tr:nth-child(even){background-color: #f2f2f2;}
+#records tr:hover {background-color: #ddd;}
+#records th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ce4012;
+    color: white;
+}
+    
 body{
     background-color: #f2f2f2;
 }
-
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -22,7 +39,6 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 button{
     background-color: #4CAF90;
     color: white;
@@ -30,9 +46,7 @@ button{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
 }
-
 input[type=text], select, textarea{
     width: 90%; /* Full width */
     padding: 12px; /* Some padding */ 
@@ -43,7 +57,6 @@ input[type=text], select, textarea{
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-
 </style>
 </head>
 
@@ -149,5 +162,3 @@ mysqli_close($conn);
 
 
 
-</body>
-</html>
