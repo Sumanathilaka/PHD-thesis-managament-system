@@ -24,7 +24,7 @@ session_start();
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #b7e9ec;
     color: white;
 }
     
@@ -124,7 +124,7 @@ echo  "<table id = 'records'>";
       echo  "<th>Project</th>";
       echo  "<th>Guided By</th>";
       echo  "<th>Present Status</th>";
-      echo  "<th>Modified Date</th>";
+      echo  "<th>Last Modified Date</th>";
       echo  "<th>Edit</th>";
       echo  "<th>History</th>";
   echo "</tr>";    
