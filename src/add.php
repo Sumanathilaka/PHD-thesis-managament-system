@@ -101,14 +101,14 @@ input[type=submit]:hover {
  <form action="studentdata.php" method="POST" enctype="multipart/form-data">
 
 
-   <label >Full Name</label>
+   <label >Student Full Name</label>
     <input type="text"  name="name" placeholder="Name" required="true">
-        <label >Roll No</label>
+        <label >Student Roll No</label>
     <input type="text"  name="rollno" placeholder="Roll No" required="true">
-        <label >Email Id</label>
+        <label > Student Email Id</label>
     <input type="text"  name="emailid" placeholder="EmailId" required="true">
 
-<label for="department">Department</label>
+<label for="department">Student Department</label>
 <select  name="department">
 <option value="">Select the department</option>    
 <option value="Architecture and Planning ">Architecture and Planning </option>
@@ -124,9 +124,9 @@ input[type=submit]:hover {
 <br>
 </select>
 
-<label >Guidance</label>
+<label >Guide Name</label>
 <input type="text"  name="guidance" placeholder="Guidance" required="true">
-<label >Guidance Email-Id</label>
+<label >Guide Email-Id</label>
 <input type="text"  name="guide_emailid" placeholder="Email -Id" required="true">
 
 
