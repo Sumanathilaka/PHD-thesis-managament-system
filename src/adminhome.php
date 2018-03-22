@@ -76,10 +76,9 @@ input[type=text], select, textarea{
 <input type="submit" value="search">
 </form>
 <form action="searchStatus.php" method="POST">
-<label ><b>Search by status<b></label>
-    <br>
+<br>
 <select  id = 'status' name="status">
-<option value="">Select the option</option>    
+<option value="">Search by Status</option>    
 <option value="option1">option1</option>
 <option value="option2">option2</option>
 <option value="option3">option3</option>
@@ -92,7 +91,7 @@ input[type=text], select, textarea{
 <option value="option10">option10</option>
 </select>
 <input type="submit" value="search">
-<br>
+<br><br>
 </form>
 
 
