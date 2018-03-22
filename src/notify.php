@@ -68,6 +68,7 @@ input[type=text], select, textarea{
 <h2>phD Student Project Management System</h2></center>
 <br><br>
     <center><button onclick="window.location.href='adminhome.php'">Home</button></center>
+    <br><br>
 <?php
 
 $currenttime=date('Y-m-d');
