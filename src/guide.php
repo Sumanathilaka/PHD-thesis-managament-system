@@ -70,7 +70,6 @@ input[type=text], select, textarea{
 <br><br>
 
 <?php
-
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -78,26 +77,21 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
-
-
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $roll="";
 $name=$_SESSION['username'];
-
 $sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
 FROM project,mtechstudent 
 where project.rollno=mtechstudent.rollno and guidemail='$name'";
 $result= mysqli_query($conn, $sql);
 $availability=0;
-
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
             $roll=$row['rollno'];
              $availability=1;
              
-
       
 echo  "<table id = 'records'>"; 
   echo "<tr>";
@@ -117,25 +111,21 @@ if (mysqli_num_rows($result) > 0) {
   ?>       
             <?php
         
-        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td>", "<form action = 'historyuser.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'History'></form>", "</td></tr>" ;?>
+        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td> ,"<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'History'></form>", "</td></tr>" ;?>
+        ?>
 
 
 <?php
 }
 }
-
-
-
 if($availability==0)
 {
-
   ?>
  <center>
   <?php
   echo "<br><br><br>";
    echo "No projects are available";
 }
-
                   
 mysqli_close($conn);
 ?> 
@@ -159,6 +149,3 @@ mysqli_close($conn);
    
 </body>
 </html>
-
-
-
