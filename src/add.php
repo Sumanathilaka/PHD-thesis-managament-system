@@ -127,7 +127,7 @@ input[type=submit]:hover {
 <label >Guide Name</label>
 <input type="text"  name="guidance" placeholder="Guidance" required="true">
 <label >Guide Email-Id</label>
-<input type="text"  name="guide_emailid" placeholder="Email -Id" required="true">
+<input type="text"  name="guide_emailid" placeholder="Email -Id" required="true" pattern="[a-z0-9._%+-]+@nitc.ac.in">
 
 
   <h3 style="color:green">Project Details</h3></center>
