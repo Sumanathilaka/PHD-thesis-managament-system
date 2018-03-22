@@ -85,22 +85,27 @@ if (mysqli_num_rows($result) > 0) {
              $availability=1;
              
 
-  ?>
-          <div style="width: 30%;float:left;padding: 15px;background-color: #e9dbd8;margin: 5px" >
-           
+      
+echo  "<table id = 'records'>"; 
+  echo "<tr>";
+      echo  "<th>Name</th>";
+      echo  "<th>Roll No</th>";
+      echo  "<th>Project</th>";
+      echo  "<th>Guided By</th>";
+      echo  "<th>Present Status</th>";
+      echo  "<th>Last Modified Date</th>";
+      echo  "<th>History</th>";
+  echo "</tr>";    
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+              
+             $availability=1;
+              $roll=$row['rollno'];
+  ?>       
             <?php
-  echo  "<h4>Name:  " . $row["name"]."<br> ". " Roll No :  " . $row["rollno"]. " <br> ". " Project : " . $row["topic"]. "<br> "." Guided By: " . $row["guide"]."<br>  ".  "Present Status : " . $row["status"]."<br>  ". "Modified Date : " . $row["date"]."<br>" ; 
+        
+        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td>", "<form action = 'historyuser.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'History'></form>", "</td></tr>" ;?>
 
-?>
-<br>
-
-<center>
- <form action="historyuser.php" method="post" >
-  <input type="hidden" name="rollno" value=<?php echo $roll ?> >
-  <input type="submit" value="History">
-</form>
-</center>
-</div>
 
 <?php
 }
