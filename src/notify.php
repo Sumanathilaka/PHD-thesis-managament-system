@@ -67,7 +67,7 @@ input[type=text], select, textarea{
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
 <h2>phD Student Project Management System</h2></center>
 <br><br>
-
+    <center><button onclick="window.location.href='adminhome.php'">Home</button></center>
 <?php
 
 $currenttime=date('Y-m-d');
