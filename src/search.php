@@ -88,7 +88,8 @@ if (!$conn) {
 $search=mysqli_real_escape_string($conn, $_POST['search']);
 $sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
 FROM project,mtechstudent 
-where (project.rollno=mtechstudent.rollno and project.rollno LIKE '%$search%') OR (project.rollno=mtechstudent.rollno AND mtechstudent.name LIKE '%$search%');";
+where project.rollno=mtechstudent.rollno and project.rollno LIKE '%$search%'";
+	
 $result= mysqli_query($conn, $sql);
 $availability=0;
 if (mysqli_num_rows($result) > 0) {
