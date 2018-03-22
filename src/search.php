@@ -88,7 +88,7 @@ if (!$conn) {
 $search=mysqli_real_escape_string($conn, $_POST['search']);
 $sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
 FROM project,mtechstudent 
-where project.rollno=mtechstudent.rollno and project.rollno LIKE '%$search%'";
+where (project.rollno=mtechstudent.rollno and project.rollno LIKE '%$search%') OR (project.rollno=mtechstudent.rollno AND mtechstudent.name LIKE '%$search%') ";
 	
 $result= mysqli_query($conn, $sql);
 $availability=0;
@@ -107,11 +107,7 @@ if (mysqli_num_rows($result) > 0) {
   echo "</tr>";
     
     while($row = mysqli_fetch_assoc($result)) {
-    
-    if($row["rollno"]==$search ||$row["name"]==$search)
-      {
-              
-             $availability=1;
+    $availability=1;
               $roll=$row['rollno'];
   ?>
           <?php
@@ -121,7 +117,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php
 }
 }
-}
+
 if($availability==0)
 {
   ?>
