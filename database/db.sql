@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2018 at 07:08 PM
+-- Generation Time: Mar 28, 2018 at 12:38 AM
 -- Server version: 5.7.20-0ubuntu0.17.04.1
 -- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
@@ -33,15 +33,6 @@ CREATE TABLE `history` (
   `datemodify` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `history`
---
-
-INSERT INTO `history` (`no`, `rollno`, `status`, `datemodify`) VALUES
-(1, 'b150223cs', 'option1', '2018-03-22'),
-(3, 'b150005cs', 'option3', '2018-03-22'),
-(4, 'b150223cs', 'option3', '2018-03-29');
-
 -- --------------------------------------------------------
 
 --
@@ -54,18 +45,9 @@ CREATE TABLE `mtechstudent` (
   `email` varchar(225) NOT NULL,
   `department` varchar(225) NOT NULL,
   `guide` varchar(225) NOT NULL,
-  `guidemail` varchar(225) NOT NULL
+  `guidemail` varchar(225) NOT NULL,
+  `guide2` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mtechstudent`
---
-
-INSERT INTO `mtechstudent` (`name`, `rollno`, `email`, `department`, `guide`, `guidemail`) VALUES
-('heshan', 'b150005cs', 'deshawn@gmail.com', 'Mathematics', 'vinod', 'sumanathilaka_b150413cs@nitc.ac.in'),
-('suneet', 'b150223cs', 'ara@gmail.com', 'Mathematics', 'vinod', 'sumanathilaka_b150413cs@nitc.ac.in'),
-('deshan', 'b150413cs', 'deshan@gmail.com', 'Computer Science & Engineering', 'vinod', 'sumanathilaka_b150413cs@nitc.ac.in'),
-('rakhee', 'b150474cs', 'rakhee@gmail.com', 'Mechanical Engineering', 'vinod', 'sumanathilaka_b150413cs@nitc.ac.in');
 
 -- --------------------------------------------------------
 
@@ -79,16 +61,6 @@ CREATE TABLE `project` (
   `status` varchar(225) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `project`
---
-
-INSERT INTO `project` (`rollno`, `topic`, `status`, `date`) VALUES
-('b150005cs', 'solar plant', 'option3', '2018-03-22'),
-('b150223cs', 'asus', 'option3', '2018-03-29'),
-('b150413cs', 'network', 'option1', '2018-03-22'),
-('b150474cs', 'compiler', 'option1', '2018-03-14');
 
 --
 -- Indexes for dumped tables
@@ -120,7 +92,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
