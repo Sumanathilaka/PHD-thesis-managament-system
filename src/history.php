@@ -12,7 +12,24 @@ if(!isset($_SESSION['username'])) {
 <link rel="icon" href="nitc.png">
 
 <style>
-
+#records {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#records td, #records th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#records tr:nth-child(even){background-color: #f2f2f2;}
+#records tr:hover {background-color: #ddd;}
+#records th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ce4012;
+    color: white;
+}
 body{
     background-color: #f2f2f2;
 }
@@ -88,6 +105,7 @@ where rollno='$roll' ORDER BY datemodify";
 $result= mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
+    echo  "<table id = 'records'>"; 
     echo "<tr>";
       echo  "<th>Name</th>";
       echo  "<th>Roll No</th>";
@@ -95,7 +113,9 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) 
  {
         echo "<tr><td>", $row['status'] , "</td><td>" , $row['datemodify'] , "</td></tr>";  
- }}
+ }
+ echo "</table>";
+}
 else
     echo "<p>No history found</p>";
                   

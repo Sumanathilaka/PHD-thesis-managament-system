@@ -152,7 +152,9 @@ $new = date('Y-m-d', strtotime("$current +  $v days"));
 
    echo "</td></tr>" ;
 
- }}
+ }
+ echo "</table>";
+}
 
 
 if($availability==0)
