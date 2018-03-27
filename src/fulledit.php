@@ -89,7 +89,6 @@ input[type=submit]:hover {
 <br><br>
 
 <?php
-    
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -120,7 +119,6 @@ if (mysqli_num_rows($result) > 0) {
    $guidemail=$row["guidemail"];
    $modifieddate=$row["date"];
    $topic=$row["topic"];
-
 }
 }
                   
@@ -129,15 +127,15 @@ mysqli_close($conn);
 </div>
 <br><br>
 
-<form action="fulledit.php" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to submit the form?'); >
+<form action="fulledit.php" method="POST" enctype="multipart/form-data">
 
 
    <label >Student Full Name</label>
-    <input type="text"  name="name" placeholder="Name" required="true" value='$name'>
+    <input type="text"  name="name"  required="true" value=<?php  echo $name ?>>
         <label >Student Roll No</label>
-    <input type="text"  name="rollno" placeholder="Roll No" required="true" value='$roll'>
+    <input type="text"  name="rollno"  required="true" value=<?php  echo $roll ?>>
         <label > Student Email Id</label>
-    <input type="text"  name="emailid" placeholder="EmailId" required="true" value='$email'>
+    <input type="text"  name="emailid" required="true" value=<?php  echo $email ?>>
 
 <label for="department">Student Department</label>
 <select  name="department">
@@ -154,22 +152,17 @@ mysqli_close($conn);
 <option value="Physics">Physics</option>   
 <br>
 </select>
-
 <label >Guide Name</label>
-<input type="text"  name="guidance" placeholder="Guidance" required="true" value='$Guided'>
+<input type="text"  name="guidance"  required="true" value=<?php  echo $Guided ?>>
 <label >Guide Email-Id</label>
-<input type="text"  name="guide_emailid" placeholder="Email -Id" required="true" pattern="[a-z0-9._%+-]+@nitc.ac.in" value='$guidemail'>
-
-
+<input type="text"  name="guide_emailid"  required="true" pattern="[a-z0-9._%+-]+@nitc.ac.in" value=<?php  echo $guidemail ?>>
   <h3 style="color:green">Project Details</h3></center>
   <br>
 <label >Project Topic </label>
-<input type="text"  name="topic" placeholder="project Name" required="true" value='$topic'>
+<input type="text"  name="topic"  required="true" value=<?php  echo $topic ?>>
 <label >Status of the project</label>
-
 <select  name="status">
-<option value="">select the option</option>    
-<option value="option1">option1</option>
+ <option value="option1">option1</option>
 <option value="option2">option2</option>
 <option value="option3">option3</option>
 <option value="option4">option4</option>
@@ -179,18 +172,12 @@ mysqli_close($conn);
 <option value="option8">option8</option>
 <option value="option9">option9</option>
 <option value="option10">option10</option>
-
-
 </select>
 <br>
 <label >Date</label>
-<input type="date"  name="date" placeholder="Date" required="true">
-
-<input type="submit" value="Submit">
+<input type="date"  name="date"  required="true">
+<input type="submit" value="Update">
 </form>
-
-
-
     <footer style="position: fixed;
     left: 0;
     bottom: 0;
@@ -210,8 +197,5 @@ mysqli_close($conn);
    
 </body>
 </html>
-
-
-
 </body>
 </html>
