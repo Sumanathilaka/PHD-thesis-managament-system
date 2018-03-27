@@ -72,7 +72,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+$name=mysqli_real_escape_string($conn, $_POST['name']);
 $roll=mysqli_real_escape_string($conn, $_POST['rollno']);
+echo "<h3>".$name."</h3><br>";
 echo "<h3>".$roll."</h3><br>";
 
 $sql = "SELECT rollno,status,datemodify
