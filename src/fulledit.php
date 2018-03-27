@@ -127,7 +127,7 @@ mysqli_close($conn);
 </div>
 <br><br>
 
-<form action="fulledit.php" method="POST" enctype="multipart/form-data">
+<form action="fulleditupdate.php" method="POST" enctype="multipart/form-data">
 
 
    <label >Student Full Name</label>
