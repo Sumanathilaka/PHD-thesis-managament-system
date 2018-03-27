@@ -113,7 +113,7 @@ if (mysqli_num_rows($result) > 0) {
               $roll=$row['rollno'];
 
         
-                echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'historyuser.php' method = 'post'>", "<input type = 'hidden' name = 'rollno' value = ", $roll, ">", "<input type = 'hidden' name = 'name' value = ", $row['name'], ">", "<input type = 'submit' value = 'History'></form>", "</td></tr>" ;
+                echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'historyuser.php' method = 'post'>", "<input type = 'hidden' name = 'rollno' value = '", $roll, "'>", "<input type = 'hidden' name = 'name' value = '", $row['name'], "'>", "<input type = 'submit' value = 'History'></form>", "</td></tr>" ;
 
 }
 }
