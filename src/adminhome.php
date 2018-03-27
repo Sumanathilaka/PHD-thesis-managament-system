@@ -129,7 +129,9 @@ echo "<tr>";
       echo  "<th>Last Modified Date</th>";
       echo  "<th>Edit</th>";
       echo  "<th>History</th>";
+      echo "<th>Primary Details</th>";
       echo "<th>Notification</th>";
+     
   echo "</tr>";    
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
@@ -141,7 +143,7 @@ $v=14;
 $current=$row['date'];
 $new = date('Y-m-d', strtotime("$current +  $v days")); 
         
-        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = '", $roll, "'><input type = 'hidden' name = 'name' value = '", $row['name'], "'><input type = 'submit' value = 'History'></form>","</td><td>";
+        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = '", $roll, "'><input type = 'hidden' name = 'name' value = '", $row['name'], "'><input type = 'submit' value = 'History'></form>","</td><td><form action = 'fulledit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Details'></form>","</td><td>";
 
       if ($new <= $currenttime) {
 
@@ -149,6 +151,8 @@ $new = date('Y-m-d', strtotime("$current +  $v days"));
   <input type='hidden' name='rollno' value= ",$roll ,"> 
   <input type='submit' value='Notification' style='background-color: red'></form>"; 
          }
+	    
+	    
 
    echo "</td></tr>" ;
 
