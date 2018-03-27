@@ -141,7 +141,7 @@ $v=14;
 $current=$row['date'];
 $new = date('Y-m-d', strtotime("$current +  $v days")); 
         
-        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'hidden' name = 'rollno' value = ", $row['name'], "><input type = 'submit' value = 'History'></form>","</td><td>";
+        echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'hidden' name = 'name' value = ", $row['name'], "><input type = 'submit' value = 'History'></form>","</td><td>";
 
       if ($new <= $currenttime) {
 
