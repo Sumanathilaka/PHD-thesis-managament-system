@@ -122,7 +122,7 @@ $not=1;
 $roll=$row['rollno'];
   
    
- echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'>", "<input type = 'hidden' name = 'rollno' value = '", $roll, "'><input type = 'hidden' name = 'name' value = ", $row['name'], "'><input type = 'submit' value = 'History'></form>","</td><td>",$row["status"]." Time period has been expired by:".$new ,"</td></tr>";
+ echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ", $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'>", "<input type = 'hidden' name = 'rollno' value = '", $roll, "'><input type = 'hidden' name = 'name' value = '", $row['name'], "'><input type = 'submit' value = 'History'></form>","</td><td>",$row["status"]." Time period has been expired by:".$new ,"</td></tr>";
 
 }
 }
