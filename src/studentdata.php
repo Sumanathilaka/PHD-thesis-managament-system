@@ -26,17 +26,18 @@ if ($conn->connect_error) {
 } 
 
       $name=mysqli_real_escape_string($conn, $_POST['name']);
-	    $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
+      $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
       $email=mysqli_real_escape_string($conn, $_POST['emailid']);
       $department=mysqli_real_escape_string($conn, $_POST['department']);
       $guide=mysqli_real_escape_string($conn, $_POST['guidance']);
       $guide_emailid=mysqli_real_escape_string($conn, $_POST['guide_emailid']);
+      $guide2=mysqli_real_escape_string($conn, $_POST['guide2']);
       $topic=mysqli_real_escape_string($conn, $_POST['topic']);
       $status=mysqli_real_escape_string($conn, $_POST['status']);
       $date=mysqli_real_escape_string($conn, $_POST['date']);
 	   
-	 $sql = " INSERT INTO mtechstudent(name,rollno,email,department,guide,guidemail) VALUES 
-('$name','$rollno','$email','$department','$guide','$guide_emailid')";
+	 $sql = " INSERT INTO mtechstudent(name,rollno,email,department,guide,guidemail,guide2) VALUES 
+('$name','$rollno','$email','$department','$guide','$guide_emailid','$guide2')";
 
    $sql2 = " INSERT INTO project(rollno,topic,status,date) VALUES 
 ('$rollno','$topic','$status','$date')";
