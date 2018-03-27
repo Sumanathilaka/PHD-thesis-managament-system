@@ -79,31 +79,24 @@ echo "<h3>".$roll."</h3><br>";
 
 $sql = "SELECT rollno,status,datemodify
 FROM history
-where rollno='$roll'";
+where rollno='$roll' ORDER BY datemodify";
 
 $result= mysqli_query($conn, $sql);
-$availability=0;
 
 if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-    
-  
- ?>
-          <div style="width: 30%;float:left;padding: 15px;background-color: #e9dbd8;margin: 5px" >
-           
-            <?php
-  echo  "<h4>Status:  " . $row["status"]."<br> ". " Date :  " . $row["datemodify"]. " <br> "; 
-
-?>
-<br>
-
-</div>
-
-<?php
+    echo  "<table id = 'records'>"; 
+    echo "<tr>";
+      echo  "<th>Status</th>";
+      echo  "<th>Date</th>";
+    echo "</tr>";
+    while($row = mysqli_fetch_assoc($result)) 
+ {
+        echo "<tr><td>", $row['status'] , "</td><td>" , $row['datemodify'] , "</td></tr>";  
+ }
+ echo "</table>";
 }
-}
-                  
-mysqli_close($conn);
+else
+    echo "<p>No history found</p>";
 ?> 
     </center>
     <footer style="position: fixed;

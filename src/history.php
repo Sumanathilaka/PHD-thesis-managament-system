@@ -107,8 +107,8 @@ $result= mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     echo  "<table id = 'records'>"; 
     echo "<tr>";
-      echo  "<th>Name</th>";
-      echo  "<th>Roll No</th>";
+      echo  "<th>Status</th>";
+      echo  "<th>Date</th>";
     echo "</tr>";
     while($row = mysqli_fetch_assoc($result)) 
  {
