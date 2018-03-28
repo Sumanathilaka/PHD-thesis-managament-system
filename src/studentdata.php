@@ -31,7 +31,7 @@ if ($conn->connect_error) {
       $department=mysqli_real_escape_string($conn, $_POST['department']);
       $guide=mysqli_real_escape_string($conn, $_POST['guidance']);
       $guide_emailid=mysqli_real_escape_string($conn, $_POST['guide_emailid']);
-      $guide2=mysqli_real_escape_string($conn, $_POST['guide2']);
+      $guide2=mysqli_real_escape_string($conn, $_POST['guidance2']);
       $topic=mysqli_real_escape_string($conn, $_POST['topic']);
       $status=mysqli_real_escape_string($conn, $_POST['status']);
       $date=mysqli_real_escape_string($conn, $_POST['date']);
