@@ -38,6 +38,7 @@ if ($conn->connect_error) {
 	   $tdate=mysqli_real_escape_string($conn, $_POST['tdate']);
 	   $ddate=mysqli_real_escape_string($conn, $_POST['ddate']);
 	   $edate=mysqli_real_escape_string($conn, $_POST['edate']);
+	echo $tdate;
 	
 	   
 	 $sql = " INSERT INTO mtechstudent(name,rollno,email,department,guide,guidemail,guide2) VALUES 
