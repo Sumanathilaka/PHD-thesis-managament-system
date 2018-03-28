@@ -31,10 +31,16 @@ if ($conn->connect_error) {
       $topic=mysqli_real_escape_string($conn, $_POST['topic']);
       $guide2=mysqli_real_escape_string($conn, $_POST['guide2']);
 	   $roll=mysqli_real_escape_string($conn, $_POST['roll']);
+	   $tdate=mysqli_real_escape_string($conn, $_POST['tdate']);
+	   $ddate=mysqli_real_escape_string($conn, $_POST['ddate']);
+	   $edate=mysqli_real_escape_string($conn, $_POST['edate']);
 	 
 
 $sql =  "UPDATE project SET rollno='$rollno' WHERE rollno='$roll' ";
 $sql2 = "UPDATE project SET topic='$topic' WHERE rollno='$roll' ";
+        $sql23 = "UPDATE project SET defensedate='$ddate' WHERE rollno='$roll' ";
+	$sql24 = "UPDATE project SET evalutiondate='$edate' WHERE rollno='$roll' ";
+	$sql25 = "UPDATE project SET thesisdate='$tdate' WHERE rollno='$roll' ";
 $sql5 = "UPDATE mtechstudent SET name='$name' WHERE rollno='$roll' ";
 $sql6 = "UPDATE mtechstudent SET rollno='$rollno' WHERE rollno='$roll' ";
 $sql7 = "UPDATE mtechstudent SET email='$email' WHERE rollno='$roll' ";
@@ -42,6 +48,9 @@ $sql8 = "UPDATE mtechstudent SET department='$department' WHERE rollno='$roll' "
 $sql9 = "UPDATE mtechstudent SET guide='$guide' WHERE rollno='$roll' ";
 $sql10 = "UPDATE mtechstudent SET guidemail='$guide_emailid' WHERE rollno='$roll' ";
 $sql19 = "UPDATE mtechstudent SET guide2='$guide2' WHERE rollno='$roll' ";
+	
+	
+	
 $result= mysqli_query($conn, $sql);
 $result1= mysqli_query($conn, $sql2);
 $result5= mysqli_query($conn, $sql5);
@@ -50,6 +59,10 @@ $result7= mysqli_query($conn, $sql7);
 $result8= mysqli_query($conn, $sql8);
 $result9= mysqli_query($conn, $sql9);
 $result9= mysqli_query($conn, $sql19);	
+	
+$result23= mysqli_query($conn, $sql23);
+	$result24= mysqli_query($conn, $sql24);
+	$result25= mysqli_query($conn, $sql25);	
 
 
 
