@@ -102,7 +102,7 @@ if (!$conn) {
 }
 $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
+$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date,guide2
 FROM project,mtechstudent 
 where project.rollno=mtechstudent.rollno
  and project.rollno='$rollno'";
@@ -119,6 +119,7 @@ if (mysqli_num_rows($result) > 0) {
    $modifieddate=$row["date"];
    $topic=$row["topic"];
    $department=$row["department"];
+   $guide2=$row["guide2"];
 }
 }
                   
@@ -156,6 +157,9 @@ mysqli_close($conn);
 <input type="text"  name="guidance"  required="true" value=<?php  echo $Guided ?>>
 <label >Guide Email-Id</label>
 <input type="text"  name="guide_emailid"  required="true" pattern="[a-z0-9._%+-]+@nitc.ac.in" value=<?php  echo $guidemail ?>>
+<label >Guide Name</label>
+<input type="text"  name="guide2"  required="true" value=<?php  echo $guide2 ?>>
+	
   <h3 style="color:green">Project Details</h3></center>
   <br>
 <label >Project Topic </label>
