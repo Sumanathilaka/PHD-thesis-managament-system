@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2018 at 10:12 AM
+-- Generation Time: Mar 28, 2018 at 09:54 PM
 -- Server version: 5.7.20-0ubuntu0.17.04.1
 -- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
@@ -30,7 +30,8 @@ CREATE TABLE `history` (
   `no` int(255) NOT NULL,
   `rollno` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `datemodify` varchar(225) NOT NULL
+  `datemodify` varchar(225) NOT NULL,
+  `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -58,8 +59,10 @@ CREATE TABLE `mtechstudent` (
 CREATE TABLE `project` (
   `rollno` varchar(225) NOT NULL,
   `topic` varchar(225) NOT NULL,
-  `status` varchar(225) NOT NULL,
-  `date` date NOT NULL,
+  `status1` varchar(225) NOT NULL,
+  `date1` date NOT NULL,
+  `status2` varchar(225) NOT NULL,
+  `date2` date NOT NULL,
   `thesisdate` date NOT NULL,
   `evalutiondate` date NOT NULL,
   `defensedate` date NOT NULL
@@ -95,7 +98,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
