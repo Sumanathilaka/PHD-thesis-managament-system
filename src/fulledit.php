@@ -102,7 +102,7 @@ if (!$conn) {
 }
 $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date,guide2
+$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date,guide2,thesisdate,evalutiondate,defensedate
 FROM project,mtechstudent 
 where project.rollno=mtechstudent.rollno
  and project.rollno='$rollno'";
@@ -120,6 +120,11 @@ if (mysqli_num_rows($result) > 0) {
    $topic=$row["topic"];
    $department=$row["department"];
    $guide2=$row["guide2"];
+   $tdate=$row["thesisdate"];
+   $edate=$row["evalutiondate"];
+   $ddate=$row["defensedate"];
+	    
+	    
 }
 }
                   
@@ -165,6 +170,15 @@ mysqli_close($conn);
 <label >Project Topic </label>
 <input type="text"  name="topic"  required="true" value=<?php  echo $topic ?> >
 <input type="hidden" name="roll" value=<?php  echo $roll ?>>
+	
+	 <label >Thesis Submitted Date</label>
+<input type="date"  name="tdate" value=<?php  echo $tdade ?> >
+	 
+	 <label >Evaluation Report to Department</label>
+<input type="date"  name="edate"  value=<?php  echo $edate?>>
+
+	 <label >Defense Date</label>
+<input type="date" name="ddate" value=<?php  echo $ddate ?> >
 
 <input type="submit" value="Update">
 </form>
