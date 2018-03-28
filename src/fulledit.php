@@ -172,7 +172,7 @@ mysqli_close($conn);
 <input type="hidden" name="roll" value=<?php  echo $roll ?>>
 	
 	 <label >Thesis Submitted Date</label>
-<input type="date"  name="tdate" value=<?php  echo $tdade ?> >
+<input type="date"  name="tdate" value=<?php  echo $tdate ?> >
 	 
 	 <label >Evaluation Report to Department</label>
 <input type="date"  name="edate"  value=<?php  echo $edate?>>
