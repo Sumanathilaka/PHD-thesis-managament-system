@@ -159,6 +159,15 @@ input[type=submit]:hover {
 <br>
 <label >Date</label>
 <input type="date"  name="date" placeholder="Date" required="true">
+	 
+	 <label >Thesis Submitted Date</label>
+<input type="date"  name="tdate" placeholder="Thesis Submitted Date" >
+	 
+	 <label >Evaluation Report to Department</label>
+<input type="date"  name="edate" placeholder="Evaluation Report to Department" >
+
+	 <label >Defense Date</label>
+<input type="date"  name="ddate" placeholder="Defense Date" >
 
 <input type="submit" value="Submit">
 </form>
