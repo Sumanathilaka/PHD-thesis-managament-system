@@ -157,7 +157,7 @@ input[type=submit]:hover {
 
 </select>
 <br>
-<label >Date</label>
+<label >Modified Date</label>
 <input type="date"  name="date" placeholder="Date" required="true">
 	 
 	 <label >Thesis Submitted Date</label>
