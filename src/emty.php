@@ -9,10 +9,10 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($servername, $username, $password, $db);
 
 $dbName = "deanproject";
-mysql_select_db($dbName); /*added semi-colon*/
-$result_t = mysql_query("SHOW TABLES");
-while($row = mysql_fetch_assoc($result_t))
+mysqli_select_db($dbName); /*added semi-colon*/
+$result_t = mysqli_query("SHOW TABLES");
+while($row = mysqli_fetch_assoc($result_t))
 {
-   mysql_query("TRUNCATE " . $row['Tables_in_' . $dbName]);
+   mysqli_query("TRUNCATE " . $row['Tables_in_' . $dbName]);
 }
 ?>
