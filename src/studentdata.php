@@ -35,12 +35,16 @@ if ($conn->connect_error) {
       $topic=mysqli_real_escape_string($conn, $_POST['topic']);
       $status=mysqli_real_escape_string($conn, $_POST['status']);
       $date=mysqli_real_escape_string($conn, $_POST['date']);
+	   $tdate=mysqli_real_escape_string($conn, $_POST['tdate']);
+	   $ddate=mysqli_real_escape_string($conn, $_POST['ddate']);
+	   $edate=mysqli_real_escape_string($conn, $_POST['edate']);
+	
 	   
 	 $sql = " INSERT INTO mtechstudent(name,rollno,email,department,guide,guidemail,guide2) VALUES 
 ('$name','$rollno','$email','$department','$guide','$guide_emailid','$guide2')";
 
-   $sql2 = " INSERT INTO project(rollno,topic,status,date) VALUES 
-('$rollno','$topic','$status','$date')";
+   $sql2 = " INSERT INTO project(rollno,topic,status,date,thesisdate,evalutiondate,defensedate) VALUES 
+('$rollno','$topic','$status','$date','$tdate','$edate','$ddate')";
 
    $sql3 = " INSERT INTO history(rollno,status,datemodify) VALUES 
 ('$rollno','$status','$date')";
