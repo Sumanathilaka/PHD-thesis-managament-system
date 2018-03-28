@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2018 at 12:38 AM
+-- Generation Time: Mar 28, 2018 at 10:12 AM
 -- Server version: 5.7.20-0ubuntu0.17.04.1
 -- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
@@ -59,7 +59,10 @@ CREATE TABLE `project` (
   `rollno` varchar(225) NOT NULL,
   `topic` varchar(225) NOT NULL,
   `status` varchar(225) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `thesisdate` date NOT NULL,
+  `evalutiondate` date NOT NULL,
+  `defensedate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -92,7 +95,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
