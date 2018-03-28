@@ -157,8 +157,8 @@ mysqli_close($conn);
 <input type="text"  name="guidance"  required="true" value=<?php  echo $Guided ?>>
 <label >Guide Email-Id</label>
 <input type="text"  name="guide_emailid"  required="true" pattern="[a-z0-9._%+-]+@nitc.ac.in" value=<?php  echo $guidemail ?>>
-<label >Guide Name</label>
-<input type="text"  name="guide2"  required="true" value=<?php  echo $guide2 ?>>
+<label >Guide Name(optional)</label>
+<input type="text"  name="guide2" value=<?php  echo $guide2 ?>>
 	
   <h3 style="color:green">Project Details</h3></center>
   <br>
