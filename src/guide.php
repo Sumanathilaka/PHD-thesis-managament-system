@@ -1,5 +1,75 @@
 <?php
 session_start();
+$status1 = array
+  (
+    array("SynMailtoE1L1-1",14),
+    array("SynRem1toE1L1-1",7),
+    array("SynRem2toE1L1-1",7),
+    array("SynMailtoE1L1-2",14),
+    array("SynRem1toE1L1-2",7),
+    array("SynRem2toE1L1-2",7),
+    array("SynMailtoE1L1-3",14),
+    array("SynRem1toE1L1-3",7),
+    array("SynRem2toE1L1-3",7),
+    array("SynMailtoE1L1-4",14),
+    array("SynRem1toE1L1-4",7),
+    array("SynRem2toE1L1-4",7),
+    array("SynMailtoE1L2-1",14),
+    array("SynRem1toE1L2-1",7),
+    array("SynRem2toE1L2-1",7),
+    array("SynMailtoE1L2-2",14),
+    array("SynRem1toE1L2-2",7),
+    array("SynRem2toE1L2-2",7),
+    array("SynMailtoE1L2-3",14),
+    array("SynRem1toE1L2-3",7),
+    array("SynRem2toE1L2-3",7),
+    array("SynMailtoE1L2-4",14),
+    array("SynRem1toE1L2-4",7),
+    array("SynRem2toE1L2-4",7),
+    array("E1ReadyForThesisReview",365),
+    array("ThesisSentToE1",45),
+    array("ThesisE1Rem1",7),
+    array("ThesisE1Rem2",7),
+    array("ThesisE1Rem3",7),
+    array("ThesisE1Rem4",7),
+    array("E1ApprovedThesis",7),
+    array("E1ApprovedHonInitiated",365)
+   );
+   $status2 = array
+     (
+       array("SynMailtoE2L1-1",14),
+       array("SynRem1toE2L1-1",7),
+       array("SynRem2toE2L1-1",7),
+       array("SynMailtoE2L1-2",14),
+       array("SynRem1toE2L1-2",7),
+       array("SynRem2toE2L1-2",7),
+       array("SynMailtoE2L1-3",14),
+       array("SynRem1toE2L1-3",7),
+       array("SynRem2toE2L1-3",7),
+       array("SynMailtoE2L1-4",14),
+       array("SynRem1toE2L1-4",7),
+       array("SynRem2toE2L1-4",7),
+       array("SynMailtoE2L2-1",14),
+       array("SynRem1toE2L2-1",7),
+       array("SynRem2toE2L2-1",7),
+       array("SynMailtoE2L2-2",14),
+       array("SynRem1toE2L2-2",7),
+       array("SynRem2toE2L2-2",7),
+       array("SynMailtoE2L2-3",14),
+       array("SynRem1toE2L2-3",7),
+       array("SynRem2toE2L2-3",7),
+       array("SynMailtoE2L2-4",14),
+       array("SynRem1toE2L2-4",7),
+       array("SynRem2toE2L2-4",7),
+       array("E2ReadyForThesisReview",365),
+       array("ThesisSentToE2",45),
+       array("ThesisE2Rem1",7),
+       array("ThesisE2Rem2",7),
+       array("ThesisE2Rem3",7),
+       array("ThesisE2Rem4",7),
+       array("E2ApprovedThesis",7),
+       array("E2ApprovedHonInitiated",365)
+      );
 ?>
 
 
@@ -28,7 +98,7 @@ session_start();
     background-color: #ce4012;
     color: white;
 }
-    
+
 body{
     background-color: #f2f2f2;
 }
@@ -50,7 +120,7 @@ button{
 }
 input[type=text], select, textarea{
     width: 90%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -87,33 +157,38 @@ $roll="";
 $name=$_SESSION['username'];
 
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date
-FROM project,mtechstudent 
+$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status1,date1,status2,date2
+FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno and guidemail='$name'";
 
 $result= mysqli_query($conn, $sql);
 
 $availability=0;
 
-  echo  "<table id = 'records'>"; 
+  echo  "<table id = 'records'>";
   echo "<tr>";
       echo  "<th>Name</th>";
       echo  "<th>Roll No</th>";
       echo  "<th>Project</th>";
-      echo  "<th>Guided By</th>";
-      echo  "<th>Present Status</th>";
+      echo  "<th>Examiner1 Status</th>";
+      echo  "<th>Last Modified Date</th>";
+      echo  "<th>Examiner2 Status</th>";
       echo  "<th>Last Modified Date</th>";
       echo  "<th>History</th>";
-  echo "</tr>";    
+  echo "</tr>";
 
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-              
+
              $availability=1;
               $roll=$row['rollno'];
+              $statuse1= $row['status1'];
+              $statuse2= $row['status2'];
+              $s1=$status1[$statuse1][0];
+              $s2=$status2[$statuse2][0];
 
-        
-                echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $row['guide'] , "</td><td>", $row['status'] , "</td><td>" , $row['date'], "</td><td><form action = 'historyuser.php' method = 'post'>", "<input type = 'hidden' name = 'rollno' value = '", $roll, "'>", "<input type = 'hidden' name = 'name' value = '", $row['name'], "'>", "<input type = 'submit' value = 'History'></form>", "</td></tr>" ;
+                echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" , $s1 , "</td><td>", $row['date1'] , "</td><td>" ,
+                 $s2, "</td><td>", $row['date2'] ,"</td><td><form action = 'historyuser.php' method = 'post'>", "<input type = 'hidden' name = 'rollno' value = '", $roll, "'>", "<input type = 'hidden' name = 'name' value = '", $row['name'], "'>", "<input type = 'submit' value = 'History'></form>", "</td></tr>" ;
 
 }
 }
@@ -128,12 +203,11 @@ if($availability==0)
   echo "<br><br><br>";
    echo "No projects are available";
 }
-                  
+
 mysqli_close($conn);
-?> 
- 
-  
-   
+?>
+
+
+
 </body>
 </html>
-

@@ -75,7 +75,6 @@ if(!isset($_SESSION['username'])) {
         );
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,13 +96,13 @@ if(!isset($_SESSION['username'])) {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #ce4012;
+    background-color: #4CAF50;
     color: white;
 }
+
 body{
     background-color: #f2f2f2;
 }
-
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -112,7 +111,6 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 button{
     background-color: #4CAF90;
     color: white;
@@ -120,9 +118,7 @@ button{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
 }
-
 input[type=text], select, textarea{
     width: 90%; /* Full width */
     padding: 12px; /* Some padding */
@@ -133,7 +129,6 @@ input[type=text], select, textarea{
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-
 </style>
 </head>
 
@@ -142,13 +137,14 @@ input[type=text], select, textarea{
     <a href="adminhome.php"><img src="back.png" height="50px" width="50px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2>
+<h2>phD Student Project Management System</h2></center>
+<br><br>
 
-<h3 style="color:red;">History</h3></center>
+<center><button onclick="window.location.href='add.php'">Add New Project</button></center>
+<br><br>
+
 <?php
-
-
-
+$roll="";
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -156,64 +152,57 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
-
-
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-$name=mysqli_real_escape_string($conn, $_POST['name']);
-$roll=mysqli_real_escape_string($conn, $_POST['rollno']);
-echo "<h3>".$name."</h3>";
-echo "<h3>".$roll."</h3><br>";
-
-$sql = "SELECT *
-FROM history
-where rollno='$roll'AND role=1 ORDER BY datemodify";
-
+$search=mysqli_real_escape_string($conn, $_POST['status1']);
+$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status1,date1
+FROM project,mtechstudent
+where project.rollno=mtechstudent.rollno";
 $result= mysqli_query($conn, $sql);
-
+$availability=0;
 if (mysqli_num_rows($result) > 0) {
-   echo "<h3>Examiner 1</h3>";
-    echo  "<table id = 'records'>";
-    echo "<tr>";
-      echo  "<th>Status</th>";
-      echo  "<th>Date</th>";
-    echo "</tr>";
-    while($row = mysqli_fetch_assoc($result))
- {
-   $statuse1= $row['status'];
-   $s1=$status1[$statuse1][0];
-        echo "<tr><td>", $s1 , "</td><td>" , $row['datemodify'] , "</td></tr>";
- }
- echo "</table> <br>";
+
+echo  "<table id = 'records'>";
+  echo "<tr>";
+      echo  "<th>Name</th>";
+      echo  "<th>Roll No</th>";
+      echo  "<th>Project</th>";
+      echo  "<th>Guided By</th>";
+      echo  "<th>Present Status</th>";
+      echo  "<th>Modified Date</th>";
+      echo  "<th>Edit</th>";
+      echo  "<th>History</th>";
+  echo "</tr>";
+
+    while($row = mysqli_fetch_assoc($result)) {
+
+    if($row["status1"]==$search)
+      {
+
+             $availability=1;
+              $roll=$row['rollno'];
+  ?>
+
+ <?php echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] , "</td><td>" ,
+  $row['guide'] , "</td><td>", $status1[$row['status1']][0] , "</td><td>" , $row['date1'],
+   "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ",$roll,
+    "><input type = 'submit' value = 'Edit'></form>", "</td><td>", "<form action = 'history.php' method = 'post'>",
+    "<input type = 'hidden' name = 'rollno' value = '", $roll, "'>", "<input type = 'hidden' name = 'name' value = '",
+     $row['name'], "'><input type = 'submit' value = 'History'></form>", "</td></tr>" ;?>
+
+<?php
 }
-else
-    {echo "<p>No history for Examiner 1 found</p>";}
-
-    $sql = "SELECT *
-    FROM history
-    where rollno='$roll'AND role=2 ORDER BY datemodify";
-
-    $result= mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-echo "<h3>Examiner 2</h3>";
-        echo  "<table id = 'records'>";
-        echo "<tr>";
-          echo  "<th>Status</th>";
-          echo  "<th>Date</th>";
-        echo "</tr>";
-        while($row = mysqli_fetch_assoc($result))
-     {
-       $statuse2= $row['status'];
-       $s2=$status2[$statuse2][0];
-            echo "<tr><td>", $s2 , "</td><td>" , $row['datemodify'] , "</td></tr>";
-     }
-     echo "</table> <br>";
-    }
-    else
-        echo "<p>No history for Examiner 2 found</p>";
+}
+}
+if($availability==0)
+{
+  ?>
+ <center>
+  <?php
+  echo "<br><br><br>";
+   echo "No projects are available";
+}
 
 mysqli_close($conn);
 ?>

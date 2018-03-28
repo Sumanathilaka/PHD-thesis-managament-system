@@ -17,7 +17,7 @@ body{
 }
 input[type=text], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -27,7 +27,7 @@ input[type=text], select, textarea{
 }
 input[type=date], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -37,7 +37,7 @@ input[type=date], select, textarea{
 }
 input[type=time], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -47,7 +47,7 @@ input[type=time], select, textarea{
 }
 input[type=file], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -102,32 +102,31 @@ if (!$conn) {
 }
 $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status,date,guide2,thesisdate,evalutiondate,defensedate
-FROM project,mtechstudent 
+$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,guide2,thesisdate,evalutiondate,defensedate
+FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno
  and project.rollno='$rollno'";
 $result= mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-   $roll=$row["rollno"];      
+   $roll=$row["rollno"];
    $name=$row["name"];
    $roll=$row["rollno"];
    $email=$row["email"];
    $project=$row["topic"];
    $Guided=$row["guide"];
    $guidemail=$row["guidemail"];
-   $modifieddate=$row["date"];
    $topic=$row["topic"];
    $department=$row["department"];
    $guide2=$row["guide2"];
    $tdate=$row["thesisdate"];
    $edate=$row["evalutiondate"];
    $ddate=$row["defensedate"];
-	    
-	    
+
+
 }
 }
-                  
+
 mysqli_close($conn);
 ?>
 
@@ -153,9 +152,9 @@ mysqli_close($conn);
 <option value="Electrical Engineering">Electrical Engineering</option>
 <option value="Electronics & Communication Engineering">Electronics Communication Engineering </option>
 <option value="Electrical Engineering">Electrical Engineering</option>
-<option value="Mechanical Engineering">Mechanical Engineering  </option> 
-<option value="Mathematics">Mathematics</option> 
-<option value="Physics">Physics</option>   
+<option value="Mechanical Engineering">Mechanical Engineering  </option>
+<option value="Mathematics">Mathematics</option>
+<option value="Physics">Physics</option>
 <br>
 </select>
 <label >Guide Name</label>
@@ -164,16 +163,16 @@ mysqli_close($conn);
 <input type="text"  name="guide_emailid"  required="true" pattern="[a-z0-9._%+-]+@nitc.ac.in" value=<?php  echo $guidemail ?>>
 <label >Guide Name(optional)</label>
 <input type="text"  name="guide2" value=<?php  echo $guide2 ?>>
-	
+
   <h3 style="color:green">Project Details</h3></center>
   <br>
 <label >Project Topic </label>
 <input type="text"  name="topic"  required="true" value=<?php  echo $topic ?> >
 <input type="hidden" name="roll" value=<?php  echo $roll ?>>
-	
+
 	 <label >Thesis Submitted Date</label>
 <input type="date"  name="tdate" value=<?php  echo $tdate ?> >
-	 
+
 	 <label >Evaluation Report to Department</label>
 <input type="date"  name="edate"  value=<?php  echo $edate?>>
 
@@ -190,15 +189,15 @@ mysqli_close($conn);
     color: white;
     text-align: center;"
   <center>
-  
+
   Logged in as :
     <?php
      echo $_SESSION['username'];
      ?>
-  
+
   </center>
 </footer>
-   
+
 </body>
 </html>
 </body>

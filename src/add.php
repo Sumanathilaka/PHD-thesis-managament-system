@@ -3,6 +3,76 @@ session_start();
 if(!isset($_SESSION['username'])) {
         header('Location:index.php');
 	}
+  $status1 = array
+    (
+      array("SynMailtoE1L1-1",14),
+      array("SynRem1toE1L1-1",7),
+      array("SynRem2toE1L1-1",7),
+      array("SynMailtoE1L1-2",14),
+      array("SynRem1toE1L1-2",7),
+      array("SynRem2toE1L1-2",7),
+      array("SynMailtoE1L1-3",14),
+      array("SynRem1toE1L1-3",7),
+      array("SynRem2toE1L1-3",7),
+      array("SynMailtoE1L1-4",14),
+      array("SynRem1toE1L1-4",7),
+      array("SynRem2toE1L1-4",7),
+      array("SynMailtoE1L2-1",14),
+      array("SynRem1toE1L2-1",7),
+      array("SynRem2toE1L2-1",7),
+      array("SynMailtoE1L2-2",14),
+      array("SynRem1toE1L2-2",7),
+      array("SynRem2toE1L2-2",7),
+      array("SynMailtoE1L2-3",14),
+      array("SynRem1toE1L2-3",7),
+      array("SynRem2toE1L2-3",7),
+      array("SynMailtoE1L2-4",14),
+      array("SynRem1toE1L2-4",7),
+      array("SynRem2toE1L2-4",7),
+      array("E1ReadyForThesisReview",365),
+      array("ThesisSentToE1",45),
+      array("ThesisE1Rem1",7),
+      array("ThesisE1Rem2",7),
+      array("ThesisE1Rem3",7),
+      array("ThesisE1Rem4",7),
+      array("E1ApprovedThesis",7),
+      array("E1ApprovedHonInitiated",365)
+     );
+     $status2 = array
+       (
+         array("SynMailtoE2L1-1",14),
+         array("SynRem1toE2L1-1",7),
+         array("SynRem2toE2L1-1",7),
+         array("SynMailtoE2L1-2",14),
+         array("SynRem1toE2L1-2",7),
+         array("SynRem2toE2L1-2",7),
+         array("SynMailtoE2L1-3",14),
+         array("SynRem1toE2L1-3",7),
+         array("SynRem2toE2L1-3",7),
+         array("SynMailtoE2L1-4",14),
+         array("SynRem1toE2L1-4",7),
+         array("SynRem2toE2L1-4",7),
+         array("SynMailtoE2L2-1",14),
+         array("SynRem1toE2L2-1",7),
+         array("SynRem2toE2L2-1",7),
+         array("SynMailtoE2L2-2",14),
+         array("SynRem1toE2L2-2",7),
+         array("SynRem2toE2L2-2",7),
+         array("SynMailtoE2L2-3",14),
+         array("SynRem1toE2L2-3",7),
+         array("SynRem2toE2L2-3",7),
+         array("SynMailtoE2L2-4",14),
+         array("SynRem1toE2L2-4",7),
+         array("SynRem2toE2L2-4",7),
+         array("E2ReadyForThesisReview",365),
+         array("ThesisSentToE2",45),
+         array("ThesisE2Rem1",7),
+         array("ThesisE2Rem2",7),
+         array("ThesisE2Rem3",7),
+         array("ThesisE2Rem4",7),
+         array("E2ApprovedThesis",7),
+         array("E2ApprovedHonInitiated",365)
+        );
 ?>
 
 
@@ -19,7 +89,7 @@ body{
 
 input[type=text], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -30,7 +100,7 @@ input[type=text], select, textarea{
 
 input[type=date], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -41,7 +111,7 @@ input[type=date], select, textarea{
 
 input[type=time], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -53,7 +123,7 @@ input[type=time], select, textarea{
 
 input[type=file], select, textarea{
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -113,7 +183,7 @@ input[type=submit]:hover {
 
 <label for="department">Student Department</label>
 <select  name="department">
-<option value="">Select the department</option>    
+<option value="">Select the department</option>
 <option value="Architecture and Planning ">Architecture and Planning </option>
 <option value="Chemical Engineering">Chemical Engineering</option>
 <option value="Civil Engineering">Civil Engineering </option>
@@ -121,9 +191,9 @@ input[type=submit]:hover {
 <option value="Electrical Engineering">Electrical Engineering</option>
 <option value="Electronics & Communication Engineering">Electronics Communication Engineering </option>
 <option value="Electrical Engineering">Electrical Engineering</option>
-<option value="Mechanical Engineering">Mechanical Engineering  </option> 
-<option value="Mathematics">Mathematics</option> 
-<option value="Physics">Physics</option>   
+<option value="Mechanical Engineering">Mechanical Engineering  </option>
+<option value="Mathematics">Mathematics</option>
+<option value="Physics">Physics</option>
 <br>
 </select>
 
@@ -139,30 +209,40 @@ input[type=submit]:hover {
   <br>
   <label >Project Topic </label>
 <input type="text"  name="topic" placeholder="project Name" required="true">
-<label >Status of the project</label>
+<label >Status of Examiner 1</label>
+<select  name="status1">
 
-<select  name="status">
-<option value="">select the option</option>    
-<option value="option1">option1</option>
-<option value="option2">option2</option>
-<option value="option3">option3</option>
-<option value="option4">option4</option>
-<option value="option5">option5</option>
-<option value="option6">option6</option>
-<option value="option7">option7</option>
-<option value="option8">option8</option>
-<option value="option9">option9</option>
-<option value="option10">option10</option>
-
-
+<?php
+echo "<option value=\"\">Select</option>";
+for($row=0;$row<32;$row++)
+  {
+    echo "<option value=".$row.">".$status1[$row][0]."</option>";
+  }
+?>
 </select>
 <br>
 <label >Modified Date</label>
-<input type="date"  name="date" placeholder="Date" required="true">
-	 
+<input type="date"  name="date1" placeholder="Date" required="true">
+<br>
+<label >Status of Examiner 2</label>
+<select  name="status2">
+
+<?php
+echo "<option value=\"\">Select</option>";
+for($row=0;$row<32;$row++)
+  {
+    echo "<option value=".$row.">".$status2[$row][0]."</option>";
+  }
+?>
+</select>
+<br>
+<label >Modified Date</label>
+<input type="date"  name="date2" placeholder="Date">
+
+
 	 <label >Thesis Submitted Date</label>
 <input type="date"  name="tdate" placeholder="Thesis Submitted Date" >
-	 
+
 	 <label >Evaluation Report to Department</label>
 <input type="date"  name="edate" placeholder="Evaluation Report to Department" >
 
@@ -172,7 +252,7 @@ input[type=submit]:hover {
 <input type="submit" value="Submit">
 </form>
 
-</div> 
+</div>
 
 
 </body>
