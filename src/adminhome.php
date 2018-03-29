@@ -237,7 +237,7 @@ $new2 = date('Y-m-d', strtotime("$current2 +  $d2 days"));
             $roll, "'><input type = 'hidden' name = 'name' value = '", $row['name'], "'><input type = 'submit' value = 'History'></form>","</td><td><form action = 'fulledit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ",
              $roll, "><input type = 'submit' value = 'Details'></form>","</td><td>";
 
-      if ($new1 <= $currenttime || $new2 <= $currenttime) {
+      if ($new1 < $currenttime || $new2 < $currenttime) {
 
    echo "<form action='Notification.php' method='post' >
   <input type='hidden' name='rollno' value= ",$roll ,">
