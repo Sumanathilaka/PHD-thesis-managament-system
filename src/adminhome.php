@@ -135,7 +135,7 @@ input[type=text], select, textarea{
 
 
 <body>
-    <a href="logout.php"><img src="123.png" height="50px" width="50px"></a>
+    <a href="logout.php"><img src="123.png" height="50px" width="80px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
 <h2>phD Student Project Management System</h2></center>
