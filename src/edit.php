@@ -220,8 +220,8 @@ for($row=$statuse1+1;$row<32;$row++)
 <select  name="status2">
 
 <?php
-$statuse2= 1;
-echo "<option value=\"\">".$status2[$statuse2][0]."</option>";
+
+echo "<option value=".$statuse2.">".$status2[$statuse2][0]."</option>";
 for($row=$statuse2+1;$row<32;$row++)
   {
     echo "<option value=".$row.">".$status2[$row][0]."</option>";
