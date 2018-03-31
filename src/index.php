@@ -125,5 +125,21 @@ window.location.href = 'notify.php';
     }
   }
 ?>
+  <footer style="position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;"
+  <center>
+         For further Queries    :
+ 
+<i class="fa fa-mobile" style="font-size:36px"></i> Deshan +91 8137027213           
+<i class="fa fa-mobile" style="font-size:36px"></i> Aravind +91 7736796636 
+<i class="fa fa-mobile" style="font-size:36px"></i> Reuban +91 8137009667  
+  </center>
+</footer>
+
 </body>
 </html>
