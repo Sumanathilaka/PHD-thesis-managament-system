@@ -135,11 +135,11 @@ window.location.href = 'notify.php';
     color: white;
     text-align: center;"
   <center>
-         For further Queries    :
+         For Further Queries    :
  
-<i class="fa fa-mobile" style="font-size:36px"></i> Deshan +91 8137027213           
-<i class="fa fa-mobile" style="font-size:36px"></i> Aravind +91 7736796636 
-<i class="fa fa-mobile" style="font-size:36px"></i> Reuban +91 8137009667  
+         
+<i class="fa fa-mobile" style="font-size:36px"></i> Aravind M +91 7736796636 
+<i class="fa fa-mobile" style="font-size:36px"></i> Dr.Vinod P +91(495) 2286803  
   </center>
 </footer>
 
