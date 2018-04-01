@@ -151,10 +151,13 @@ mysqli_close($conn);
 <option value="Computer Science & Engineering">Computer Science Engineering</option>
 <option value="Electrical Engineering">Electrical Engineering</option>
 <option value="Electronics & Communication Engineering">Electronics Communication Engineering </option>
-<option value="Electrical Engineering">Electrical Engineering</option>
 <option value="Mechanical Engineering">Mechanical Engineering  </option>
+<option value="Nano-Technology">Nano-Technology</option>
+<option value="Bio-Technology">Bio-Technology</option>
+<option value="Management Studies">Management Studies</option>	
 <option value="Mathematics">Mathematics</option>
 <option value="Physics">Physics</option>
+<option value="Chemistry">Chemistry</option>	
 <br>
 </select>
 <label >Guide Name</label>
