@@ -88,7 +88,7 @@
 		<center>
 			<br><br><br><br>
 			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Guides login with your NITC email ID</h4>
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="200" data-longtitle="true"></div>
 		<center>
 	</div>
 
