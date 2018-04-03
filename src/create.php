@@ -41,7 +41,11 @@ mysqli_close($conn);
  $sql = "INSERT INTO login VALUES('$username', '$password')";
 
  if(mysqli_query($conn, $sql)) {
-   header('Location:index.php');
+ ?>
+	      <script type="text/javascript">
+window.location.href = 'index.php';
+          </script>
+		  <?php
  }
  }
                   
