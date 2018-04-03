@@ -217,7 +217,7 @@ mysqli_close($conn);
   <center>
 	<br>
 	E1: Examiner 01 ,E2: Examiner 02 ,L1: List 1 ,L2:List 2 ,Synmail: Synopsis Sent ,SynRem: Synopsis Reminder Sent 
-	<br><br>
+	<br>
 
   Logged in as :
     <?php
