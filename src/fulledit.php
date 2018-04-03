@@ -85,7 +85,7 @@ input[type=submit]:hover {
 
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>PHD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 <br><br>
 
 <?php
@@ -102,7 +102,7 @@ if (!$conn) {
 }
 $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,guide2,thesisdate,evalutiondate,defensedate
+$sql = "SELECT name,project.rollno,department,guide,guidemail,topic,guide2,thesisdate,evalutiondate,defensedate
 FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno
  and project.rollno='$rollno'";
@@ -112,7 +112,7 @@ if (mysqli_num_rows($result) > 0) {
    $roll=$row["rollno"];
    $name=$row["name"];
    $roll=$row["rollno"];
-   $email=$row["email"];
+ 
    $project=$row["topic"];
    $Guided=$row["guide"];
    $guidemail=$row["guidemail"];
