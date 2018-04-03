@@ -35,8 +35,8 @@ if(!isset($_SESSION['username'])) {
       array("ThesisE1Rem2",7),
       array("ThesisE1Rem3",7),
       array("ThesisE1Rem4",7),
-	  array("E1ThesisReviewRecieved",7),
-    array("E1ReviewRecdHonInitiated",365)
+      array("E1ApprovedThesis",7),
+      array("E1ApprovedHonInitiated",365)
      );
      $status2 = array
        (
@@ -70,9 +70,9 @@ if(!isset($_SESSION['username'])) {
          array("ThesisE2Rem2",7),
          array("ThesisE2Rem3",7),
          array("ThesisE2Rem4",7),
-            array("E2ThesisReviewRecieved",7),
-    array("E2ReviewRecdHonInitiated",365)
-     );
+         array("E2ApprovedThesis",7),
+         array("E2ApprovedHonInitiated",365)
+        );
 ?>
 
 
@@ -225,6 +225,9 @@ mysqli_close($conn);
     color: white;
     text-align: center;"
   <center>
+	<br>
+	E1: Examiner 01 ,E2: Examiner 02 ,L1: List 1 ,L2:List 2 ,Synmail: Synopsis Sent ,SynRem: Synopsis Reminder Sent 
+	<br><br>
 
   Logged in as :
     <?php
