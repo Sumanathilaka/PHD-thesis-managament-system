@@ -27,7 +27,7 @@ if ($conn->connect_error) {
 
       $name=mysqli_real_escape_string($conn, $_POST['name']);
       $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
-      $email=mysqli_real_escape_string($conn, $_POST['emailid']);
+     
       $department=mysqli_real_escape_string($conn, $_POST['department']);
       $guide=mysqli_real_escape_string($conn, $_POST['guidance']);
       $guide_emailid=mysqli_real_escape_string($conn, $_POST['guide_emailid']);
@@ -43,8 +43,8 @@ if ($conn->connect_error) {
 	echo $tdate;
 
 
-	 $sql = " INSERT INTO mtechstudent(name,rollno,email,department,guide,guidemail,guide2) VALUES
-('$name','$rollno','$email','$department','$guide','$guide_emailid','$guide2')";
+	 $sql = " INSERT INTO mtechstudent(name,rollno,department,guide,guidemail,guide2) VALUES
+('$name','$rollno'','$department','$guide','$guide_emailid','$guide2')";
 
    $sql2 = " INSERT INTO project(rollno,topic,status1,date1,status2,date2,thesisdate,evalutiondate,defensedate) VALUES
 ('$rollno','$topic','$status1','$date1','$status2','$date2','$tdate','$edate','$ddate')";
