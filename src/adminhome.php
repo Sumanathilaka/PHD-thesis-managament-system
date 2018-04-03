@@ -138,7 +138,7 @@ input[type=text], select, textarea{
     <a href="logout.php"><img src="123.png" height="50px" width="80px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 <br><br>
 
 <center><button onclick="window.location.href='add.php'">Add New Project</button>
