@@ -194,7 +194,7 @@ $conn = new mysqli($servername, $username, $password, $db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status1,date1,status2,date2
+$sql = "SELECT name,project.rollno,department,guide,guidemail,topic,status1,date1,status2,date2
 FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno";
 $result= mysqli_query($conn, $sql);
