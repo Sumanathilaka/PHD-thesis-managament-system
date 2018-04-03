@@ -28,7 +28,7 @@ mysqli_close($conn);
 <h4> Create login credentials for administrator to continue </h4>
 <br> 
  <div id="login">
-   <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+   <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" onsubmit="return confirm('Do you really want to submit the form?');>
      <input type="text" placeholder="Username" class="login" name="username" required="" > <br><br>
      <input type="password" placeholder="Password" class="login" name="password" required="" ><br><br>
      <input type="submit" value="Create" class="login">
