@@ -35,8 +35,8 @@ if(!isset($_SESSION['username'])) {
       array("ThesisE1Rem2",7),
       array("ThesisE1Rem3",7),
       array("ThesisE1Rem4",7),
-      array("E1ApprovedThesis",7),
-      array("E1ApprovedHonInitiated",365)
+	  array("E1ThesisReviewRecieved",7),
+    array("E1ReviewRecdHonInitiated",365)
      );
      $status2 = array
        (
@@ -70,9 +70,9 @@ if(!isset($_SESSION['username'])) {
          array("ThesisE2Rem2",7),
          array("ThesisE2Rem3",7),
          array("ThesisE2Rem4",7),
-         array("E2ApprovedThesis",7),
-         array("E2ApprovedHonInitiated",365)
-        );
+            array("E2ThesisReviewRecieved",7),
+    array("E2ReviewRecdHonInitiated",365)
+     );
 ?>
 
 <!DOCTYPE html>
