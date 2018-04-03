@@ -167,7 +167,7 @@ input[type=submit]:hover {
 
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 <br><br>
 
  <div class="container">
