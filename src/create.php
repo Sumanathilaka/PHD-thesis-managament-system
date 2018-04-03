@@ -30,9 +30,25 @@ mysqli_close($conn);
  <div id="login">
    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" onsubmit="return confirm('Do you really want to submit the form?');>
      <input type="text" placeholder="Username" class="login" name="username" required="" > <br><br>
-     <input type="password" placeholder="Password" class="login" name="password" required="" ><br><br>
+     <input type="password" placeholder="Password" class="login" name="password" required="" id="myInput"><br>
+											    
+											    
+	 <input type="checkbox" onclick="myFunction()"> Show Password <br><br>
+						      
+	<script>
+function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>
      <input type="submit" value="Create" class="login">
    </form>
+						      
+						      
  </div>
  <?php
  if(isset($_POST['username'])){
