@@ -40,7 +40,7 @@ window.location.href = 'guide.php';
 	    color: #348e9e;
     }
     div#login {
-	    float: right;
+	
 	    padding: 30px;
     }
     input[type=password].login, input[type=text].login {
@@ -75,9 +75,11 @@ window.location.href = 'guide.php';
 <body>
   <div id="header">
     <div id="login">
+	    <center>
       <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
        <h2>Ph.D. Thesis Management System</h2></center>
-    </div>
+	    </center>
+	  </div>
   </div>
 <br><br>	
 <center>
@@ -88,7 +90,7 @@ window.location.href = 'guide.php';
 	<div id="reg">
 		<center>
 			<br><br><br><br>
-			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Login with your NITC email ID</h4>
+			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Login with NITC email ID</h4>
 		<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="50" data-longtitle="true"></div>
 		<center>
 	</div>
