@@ -178,9 +178,6 @@ input[type=submit]:hover {
     <input type="text"  name="name" placeholder="Name" required="true">
         <label >Student Roll No</label>
     <input type="text"  name="rollno" placeholder="Roll No" required="true">
-        <label > Student Email Id</label>
-    <input type="text"  name="emailid" placeholder="EmailId" required="true">
-
 <label for="department">Student Department</label>
 <select  name="department">
 <option value="">Select the department</option>
