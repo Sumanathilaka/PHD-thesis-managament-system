@@ -110,7 +110,7 @@ window.location.href = 'guide.php';
 	</script>
 			<br><br>
 			<center>
-				<img src="nitc.png" height="500px" width="300px">
+				<img src="nitc.png" height="300px" width="250px">
 				</center>
 
 <?php
