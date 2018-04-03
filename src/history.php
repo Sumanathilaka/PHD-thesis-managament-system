@@ -184,7 +184,8 @@ if (mysqli_num_rows($result) > 0) {
  {
    $statuse1= $row['status'];
    $s1=$status1[$statuse1][0];
-        echo "<tr><td>", $s1 , "</td><td>" , $row['datemodify'] , "</td></tr>";
+	$new1=date_create($row['datemodify']);  
+        echo "<tr><td>", $s1 , "</td><td>" , data_format($new1,"d/m/Y") ,"</td></tr>";
  }
  echo "</table> <br>";
 }
@@ -208,7 +209,8 @@ echo "<h3>Examiner 2</h3>";
      {
        $statuse2= $row['status'];
        $s2=$status2[$statuse2][0];
-            echo "<tr><td>", $s2 , "</td><td>" , $row['datemodify'] , "</td></tr>";
+	$new2=date_create($row['datemodify']);  
+            echo "<tr><td>", $s2 , "</td><td>" , data_format($new2,"d/m/Y") , "</td></tr>";
      }
      echo "</table> <br>";
     }
