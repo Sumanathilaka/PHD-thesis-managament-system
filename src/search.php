@@ -137,7 +137,7 @@ input[type=text], select, textarea{
     <a href="adminhome.php"><img src="back.png" height="50px" width="50px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 <br><br>
 
 <center><button onclick="window.location.href='add.php'">Add New Project</button></center>
@@ -156,7 +156,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $search=mysqli_real_escape_string($conn, $_POST['search']);
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status1,date1,status2,date2
+$sql = "SELECT name,project.rollno,department,guide,guidemail,topic,status1,date1,status2,date2
 FROM project,mtechstudent
 where (project.rollno=mtechstudent.rollno and project.rollno LIKE '%$search%') OR (project.rollno=mtechstudent.rollno AND mtechstudent.name LIKE '%$search%') ";
 
