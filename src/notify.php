@@ -199,14 +199,14 @@ if (mysqli_num_rows($result) > 0) {
    "</td><td>" , $row['guide'] , "</td><td>", $s1 , "</td><td>" , $row['date1'],
    "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ",
     $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>",
-    $s1."Time period has been expired by:".$new1 ,"</td></tr>";
+    $s1."Time period has been expired by:".date_format($new1,"d/m/Y") ,"</td></tr>";
   }
   if($new2 < $currenttime){
  echo "<tr><td>", $row['name'] , "</td><td>" , $row['rollno'] , "</td><td>" , $row['topic'] ,
  "</td><td>" , $row['guide'] , "</td><td>", $s2 , "</td><td>" , $row['date2'],
  "</td><td><form action = 'edit.php' method = 'post'><input type = 'hidden' name = 'rollno' value = ",
   $roll, "><input type = 'submit' value = 'Edit'></form>", "</td><td>",
-  $s2."Time period has been expired by:".$new2 ,"</td></tr>";
+  $s2."Time period has been expired by:".date_format($new2,"d/m/Y") ,"</td></tr>";
 }
 
 
