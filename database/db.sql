@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2018 at 09:54 PM
+-- Generation Time: Apr 03, 2018 at 12:22 PM
 -- Server version: 5.7.20-0ubuntu0.17.04.1
 -- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
@@ -37,13 +37,23 @@ CREATE TABLE `history` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `name` varchar(225) NOT NULL,
+  `password` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mtechstudent`
 --
 
 CREATE TABLE `mtechstudent` (
   `name` varchar(255) NOT NULL,
   `rollno` varchar(255) NOT NULL,
-  `email` varchar(225) NOT NULL,
   `department` varchar(225) NOT NULL,
   `guide` varchar(225) NOT NULL,
   `guidemail` varchar(225) NOT NULL,
@@ -98,7 +108,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
