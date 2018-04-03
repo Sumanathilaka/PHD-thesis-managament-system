@@ -1,7 +1,33 @@
 <?php
 	session_start();
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+if(!$conn) {
+  echo "<script>console.log('Connection Failed ".mysqli_connect_error()."')</script>";
+  die();
+}
+$sql ="SELECT * FROM login";
+$result = mysqli_query($conn,$sql);
 
-	if(isset($_GET['email'])) {
+
+if(mysqli_num_rows($result)==0){
+                  
+mysqli_close($conn);
+  header('Location:create.php');
+}
+ while($row = mysqli_fetch_assoc($result)) {
+$loginname  =$row['name'];
+$loginpassword  =$row['password'];
+}
+mysqli_close($conn);
+
+	
+      if(isset($_GET['email'])) {
        $email=$_GET['email'];
 		$_SESSION['username'] = $email;
 	    header('Location:guide.php');
@@ -10,8 +36,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Welcome</title>
 	<style>
     * {
@@ -63,7 +87,7 @@
   </style>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!--  		<meta name="google-signin-client_id" content="893838997651-bqi7foj2m5hjb2to50906tjfnio1furm.apps.googleusercontent.com"> -->
-<meta name="google-signin-client_id" content="893838997651-1hp3r2mhib9sbhhsmsn911bev9voif0g.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="893838997651-m8j18himp436r9tscqu1q3vhlbjj8db4.apps.googleusercontent.com">
 	<meta name="google-signin-hosted_domain" content="nitc.ac.in" />
 </head>
 <body>
@@ -80,7 +104,7 @@
 <br><br>	
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 
 	
 	
@@ -88,7 +112,7 @@
 		<center>
 			<br><br><br><br>
 			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Guides login with your NITC email ID</h4>
-		<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="50" data-longtitle="true"></div>
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		<center>
 	</div>
 
@@ -111,12 +135,12 @@
     if ($_POST['source'] == 'topbar_login') {
       $username= $_POST['username'];
       $pass = $_POST['password'];
-      if($username == 'admin' && $pass == 'admin') {
+      if($username == $loginname && $pass == $loginpassword) {
         $_SESSION['username'] = $username;
-//         header('Location:notify.php ');
+//         header('Location:adminhome.php ');
 	    ?>
 	      <script type="text/javascript">
-window.location.href = 'notify.php';
+window.location.href = 'adminhome.php';
           </script>
 		  <?php
       }
@@ -127,21 +151,5 @@ window.location.href = 'notify.php';
     }
   }
 ?>
-  <footer style="position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;"
-  <center>
-         For Further Queries    :
- 
-         
-<i class="fa fa-mobile" style="font-size:36px"></i> Aravind M +91 7736796636 
-<i class="fa fa-mobile" style="font-size:36px"></i> Dr.Vinod P +91(495) 2286803  
-  </center>
-</footer>
-
 </body>
 </html>
