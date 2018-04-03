@@ -135,7 +135,7 @@ input[type=text], select, textarea{
     <a href="adminhome.php"><img src="back.png" height="50px" width="50px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 <br><br>
 
 <?php
@@ -160,7 +160,7 @@ $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
 
 $roll="";
 
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status1,date1,status2,date2
+$sql = "SELECT name,project.rollno,department,guide,guidemail,topic,status1,date1,status2,date2
 FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno
  and project.rollno='$rollno'";
