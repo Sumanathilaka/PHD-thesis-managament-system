@@ -1,38 +1,38 @@
 <?php
 	session_start();
-// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-// $servername = $url["host"];
-// $username = $url["user"];
-// $password = $url["pass"];
-// $db = substr($url["path"], 1);
-// // Create connection
-// $conn = new mysqli($servername, $username, $password, $db);
-// if(!$conn) {
-//   echo "<script>console.log('Connection Failed ".mysqli_connect_error()."')</script>";
-//   die();
-// }
-// $sql ="SELECT * FROM login";
-// $result = mysqli_query($conn,$sql);
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+if(!$conn) {
+  echo "<script>console.log('Connection Failed ".mysqli_connect_error()."')</script>";
+  die();
+}
+$sql ="SELECT * FROM login";
+$result = mysqli_query($conn,$sql);
 
 
-// if(mysqli_num_rows($result)==0){
+if(mysqli_num_rows($result)==0){
                   
-// mysqli_close($conn);
-//   header('Location:create.php');
-// }
-//  while($row = mysqli_fetch_assoc($result)) {
-// $loginname  =$row['name'];
-// $loginpassword  =$row['password'];
-// }
-// mysqli_close($conn);
+mysqli_close($conn);
+  header('Location:create.php');
+}
+ while($row = mysqli_fetch_assoc($result)) {
+$loginname  =$row['name'];
+$loginpassword  =$row['password'];
+}
+mysqli_close($conn);
 
 	
       if(isset($_GET['email'])) {
        $email=$_GET['email'];
 		$_SESSION['username'] = $email;
-// 	      if($email == 'mohammedbasil_b150451cs@nitc.ac.in'){
-// 	      header('Location:adminhome.php');
-// 	      }
+	      if($email == 'mohammedbasil_b150451cs@nitc.ac.in'){
+	      header('Location:adminhome.php');
+	      }
 	  ?>
 	      <script type="text/javascript">
 window.location.href = 'guide.php';
