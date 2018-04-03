@@ -139,8 +139,7 @@ mysqli_close($conn);
     <input type="text"  name="name"  required="true" value=<?php  echo $name ?>>
         <label >Student Roll No</label>
     <input type="text"  name="rollno"  required="true" value=<?php  echo $roll ?>>
-        <label > Student Email Id</label>
-    <input type="text"  name="emailid" required="true" value=<?php  echo $email ?>>
+     
 
 <label for="department">Student Department</label>
 <select  name="department">
