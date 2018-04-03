@@ -44,7 +44,7 @@ if ($conn->connect_error) {
 
 
 	 $sql = " INSERT INTO mtechstudent(name,rollno,department,guide,guidemail,guide2) VALUES
-('$name','$rollno'','$department','$guide','$guide_emailid','$guide2')";
+('$name','$rollno','$department','$guide','$guide_emailid','$guide2')";
 
    $sql2 = " INSERT INTO project(rollno,topic,status1,date1,status2,date2,thesisdate,evalutiondate,defensedate) VALUES
 ('$rollno','$topic','$status1','$date1','$status2','$date2','$tdate','$edate','$ddate')";
