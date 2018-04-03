@@ -1,39 +1,14 @@
 <?php
 	session_start();
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$servername = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-if(!$conn) {
-  echo "<script>console.log('Connection Failed ".mysqli_connect_error()."')</script>";
-  die();
-}
-$sql ="SELECT * FROM login";
-$result = mysqli_query($conn,$sql);
-
-
-if(mysqli_num_rows($result)==0){
-                  
-mysqli_close($conn);
-  header('Location:create.php');
-}
- while($row = mysqli_fetch_assoc($result)) {
-$loginname  =$row['name'];
-$loginpassword  =$row['password'];
-}
-mysqli_close($conn);
-
-	
-      if(isset($_GET['email'])) {
+if(isset($_GET['email'])) {
        $email=$_GET['email'];
 		$_SESSION['username'] = $email;
+	
 	      if($email == 'mohammedbasil_b150451cs@nitc.ac.in'){
 	      header('Location:adminhome.php');
 	      }
-	  ?>
+	
+?>
 	      <script type="text/javascript">
 window.location.href = 'guide.php';
           </script>
@@ -100,26 +75,21 @@ window.location.href = 'guide.php';
 <body>
   <div id="header">
     <div id="login">
-      <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
-        <input type="text" placeholder="Administrator" class="login" name="username" required="" >
-        <input type="password" placeholder="Password" class="login" name="password" required="" >
-        <input type="submit" value="Login" class="login">
-        <input type="text" style="display: none;" name="source" value="topbar_login" >
-      </form>
+      <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
+       <h2>Ph.D. Thesis Management System</h2></center>
     </div>
   </div>
 <br><br>	
 <center>
-<h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>Ph.D. Thesis Management System</h2></center>
+
 
 	
 	
 	<div id="reg">
 		<center>
 			<br><br><br><br>
-			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Guides login with your NITC email ID</h4>
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<h4 style="font-family: verdana;margin-bottom:10px;font-weight:100">Login with your NITC email ID</h4>
+		<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="50" data-longtitle="true"></div>
 		<center>
 	</div>
 
@@ -138,25 +108,24 @@ window.location.href = 'guide.php';
 	</script>
 
 <?php
-  if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['source'] == 'topbar_login') {
-      $username= $_POST['username'];
-      $pass = $_POST['password'];
-      if($username == $loginname && $pass == $loginpassword) {
-        $_SESSION['username'] = $username;
-//         header('Location:adminhome.php ');
-	    ?>
-	      <script type="text/javascript">
-window.location.href = 'adminhome.php';
-          </script>
-		  <?php
-      }
-      else {
-        echo "<script>window.alert('Incorrect Username or Password')</script>";
-        die();
-      }
-    }
-  }
+//   if($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     if ($_POST['source'] == 'topbar_login') {
+//       $username= $_POST['username'];
+//       $pass = $_POST['password'];
+//       if($username == $loginname && $pass == $loginpassword) {
+//         $_SESSION['username'] = $username;
+// //         header('Location:adminhome.php ');
+// 	   
+// 
+//          
+// 	
+//       }
+//       else {
+//         echo "<script>window.alert('Incorrect Username or Password')</script>";
+//         die();
+//       }
+//     }
+//   }
 ?>
 </body>
 </html>
