@@ -94,7 +94,7 @@ window.location.href = 'guide.php';
   </style>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!--  		<meta name="google-signin-client_id" content="893838997651-bqi7foj2m5hjb2to50906tjfnio1furm.apps.googleusercontent.com"> -->
-<meta name="google-signin-client_id" content="893838997651-rblptadk03t6i4lnvmmt6qu7mfsqjurh.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="893838997651-4kmkb845807kjdks5lrbvoml0r90mm94.apps.googleusercontent.com">
 	<meta name="google-signin-hosted_domain" content="nitc.ac.in" />
 </head>
 <body>
