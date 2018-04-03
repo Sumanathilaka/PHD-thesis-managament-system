@@ -85,7 +85,7 @@ input[type=submit]:hover {
 
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>PHD Student Project Management System</h2></center>
+<h2>Ph.D. Thesis Management System</h2></center>
 <br><br>
 
 <?php
@@ -170,7 +170,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $rollno=mysqli_real_escape_string($conn, $_POST['rollno']);
-$sql = "SELECT name,project.rollno,email,department,guide,guidemail,topic,status1,date1,status2,date2
+$sql = "SELECT name,project.rollno,department,guide,guidemail,topic,status1,date1,status2,date2
 FROM project,mtechstudent
 where project.rollno=mtechstudent.rollno
  and project.rollno='$rollno'";
