@@ -142,7 +142,7 @@ input[type=text], select, textarea{
     <a href="adminhome.php"><img src="back.png" height="50px" width="50px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-<h2>phD Student Project Management System</h2>
+<h2>Ph.D. Thesis Management System</h2>
 
 <h3 style="color:red;">History</h3></center>
 <?php
