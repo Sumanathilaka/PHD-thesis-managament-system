@@ -30,9 +30,9 @@ mysqli_close($conn);
       if(isset($_GET['email'])) {
        $email=$_GET['email'];
 		$_SESSION['username'] = $email;
-// 	      if($email == 'mohammedbasil_b150451cs@nitc.ac.in'){
-// 	      header('Location:adminhome.php');
-// 	      }
+	      if($email == 'mohammedbasil_b150451cs@nitc.ac.in'){
+	      header('Location:adminhome.php');
+	      }
 	  ?>
 	      <script type="text/javascript">
 window.location.href = 'guide.php';
