@@ -108,6 +108,10 @@ window.location.href = 'guide.php';
 			window.location.href="index.php?name="+name+"&email="+email;
 		}
 	</script>
+			<br><br>
+			<center>
+				<img src="nitc.png" height="500px" width="300px">
+				</center>
 
 <?php
 //   if($_SERVER['REQUEST_METHOD'] == 'POST') {
