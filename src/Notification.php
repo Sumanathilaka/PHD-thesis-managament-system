@@ -231,7 +231,8 @@ mysqli_close($conn);
     color: white;
     text-align: center;"
   <center>
-
+E1: Examiner 1 , E2: Examiner 2 ,L1: List 1 ,L2:List 2 , Synmail: Synopsis Sent , SynRem: Synopsis Reminder Sent 
+	<br><br>
   Logged in as :
     <?php
      echo $_SESSION['username'];
