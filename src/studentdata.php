@@ -59,8 +59,7 @@ $ex2=2;
 if (mysqli_query($conn, $sql) === TRUE) {
    echo "";
 } else {
-         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+            echo "<script>alert('Duplicate Data added.');window.location.href='adminhome.php';</script>";
 
 if (mysqli_query($conn, $sql4) === TRUE) {
    echo "";
