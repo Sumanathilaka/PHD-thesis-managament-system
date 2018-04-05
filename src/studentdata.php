@@ -59,7 +59,7 @@ $ex2=2;
 if (mysqli_query($conn, $sql) === TRUE) {
    echo "";
 } else {
-            echo "<script>alert('Duplicate Data added.');window.location.href='adminhome.php';</script>";
+            echo "<script>alert('Duplicate Input.');window.location.href='adminhome.php';</script>";
 
 if (mysqli_query($conn, $sql4) === TRUE) {
    echo "";
