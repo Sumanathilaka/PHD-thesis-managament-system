@@ -5,7 +5,7 @@ if(isset($_GET['email'])) {
 		$_SESSION['username'] = $email;
 	
 	      if($email == 'mohammedbasil_b150451cs@nitc.ac.in'){
-	      header('Location:adminhome.php');
+	      header('Location:notify.php');
 	      }
 	
 ?>
