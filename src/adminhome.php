@@ -136,7 +136,7 @@ input[type=text], select, textarea{
 
 <body>
 <!--     <a href="logout.php"><img src="123.png" height="50px" width="80px"></a> -->
-	<a href="https://accounts.google.com/Logout?&continue=https://appengine.google.com/_ah/logout?continue=http://phdtts.nitc.ac.in:8082"><img src="123.png" height="50px" width="50px"></a>
+	<a href="https://accounts.google.com/Logout?&continue=https://appengine.google.com/_ah/logout?continue=http://phdtts.nitc.ac.in:8082"><img src="123.png" height="50px" width="75px"></a>
 <center>
 <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
 <h2>Ph.D. Thesis Management System</h2></center>
