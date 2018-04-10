@@ -67,7 +67,7 @@ window.location.href = 'guide.php';
     	background-color: #348e9e; /*#45a049*/
     }
   </style>
-	 <meta name="google-signin-client_id" content="850360648626-htp1hkvfvb4t0dd3abn2gdkg2bq3hlc2.apps.googleusercontent.com"> 
+	 <meta name="google-signin-client_id" content="850360648626-95f404bp7186f589ptirkveuccl18ri7.apps.googleusercontent.com"> 
    <meta name ="google-signin-hosted_domain" content="nitc.ac.in"/> 
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="script.js"></script>
