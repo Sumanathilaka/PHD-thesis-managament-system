@@ -79,7 +79,7 @@ window.location.href = 'guide.php';
     <div id="login">
 	    <center>
       <h1>NATIONAL INSTITUTE OF TECHNOLOGY CALICUT</h1>
-       <h2>Ph.D. Thesis Management System</h2></center>
+       <h2>Ph.D.  Thesis Management System</h2></center>
 	    </center>
 	  </div>
   </div>
